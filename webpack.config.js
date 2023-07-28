@@ -3,7 +3,12 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
-  entry: './src/index.ts',
+  entry: {
+    main:[
+      "/src/ts/main.ts",
+      "/src/sass/main.scss"
+    ],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
