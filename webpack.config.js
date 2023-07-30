@@ -10,9 +10,11 @@ const config = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'assets'),
+    filename: '[name].min.js',
+    clean: true,
   },
+  devtool:"source-map",
   module: {
     rules: [
       {
@@ -21,15 +23,11 @@ const config = {
         exclude: /node_modules/
       },
       {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              mimetype: 'image/png'
-            }
-          }
-        ]
+       test:/\.(png|jpg|gif)$/,
+       type:"asset/resource",
+       generator:{
+        filename:"./img/[img][name][ext]"
+       }
       },
       {
         test: /\.scss$/,
