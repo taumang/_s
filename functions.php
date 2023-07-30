@@ -169,4 +169,9 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-
+function project_template_website_scripts(){
+	wp_enqueue_style("style", get_template_directory_uri() . "/assets/main.css", [],false);
+	wp_enqueue_script("script", get_template_directory_uri() . "/assets/main.min.js",[],false);
+	
+}
+add_action("wp_enqueue_scripts", "project_template_website_scripts");
