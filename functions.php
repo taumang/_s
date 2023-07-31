@@ -176,6 +176,22 @@ function project_template_website_scripts(){
 }
 add_action("wp_enqueue_scripts", "project_template_website_scripts");
 
+function custom_scripts(){
+	wp_enqueue_style(
+		"main",
+		get_template_directory_uri() . "assets/css/main.css",
+		[],
+		false,
+	);
+	wp_enqueue_style(
+		"nonscript",
+		get_template_directory_uri() . "assets/css/nonscript.css",
+		[],
+		false,
+	);
+}
+add_action("wp_enqueue_scripts","custom_scripts");
+
 // Enqueue scripts
 function custom_enqueue_scripts() {
     // Enqueue the first script
