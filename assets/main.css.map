@@ -1,1 +1,0 @@
-{"version":3,"file":"main.css","mappings":"AAAA,KACI,2BAA4B","sources":["webpack://empty-project/./src/sass/main.scss"],"sourcesContent":["body{\r\n    background-color: lightgreen;\r\n    \r\n}"],"names":[],"sourceRoot":""}
