@@ -175,3 +175,25 @@ function project_template_website_scripts(){
 	
 }
 add_action("wp_enqueue_scripts", "project_template_website_scripts");
+
+// Enqueue scripts
+function custom_enqueue_scripts() {
+    // Enqueue the first script
+    wp_enqueue_script(
+        'botpress-inject',
+        'https://cdn.botpress.cloud/webchat/v0/inject.js',
+        array(), // Dependencies (none in this case)
+        false, // Version (false means no version number)
+        true // Load in footer (true to load in the footer)
+    );
+
+    // Enqueue the second script
+    wp_enqueue_script(
+        'botpress-config',
+        'https://mediafiles.botpress.cloud/b3000231-fa00-4e18-b2e9-7b6fa06cbf1a/webchat/config.js',
+        array(), // Dependencies (none in this case)
+        false, // Version (false means no version number)
+        true // Load in footer (true to load in the footer)
+    );
+}
+add_action('wp_enqueue_scripts', 'custom_enqueue_scripts');
